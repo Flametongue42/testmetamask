@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript">
+</script>
+
+<script language="javascript" type="text/javascript">
+
+async function connectMetamask(){
+console.log("connect Metamask");
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+await provider.send("eth_requestAccounts", []);
+const signer=provider.getSigner();
+return false;
+}
+
+</script>
+
+
+    <title>My JPYC app</title>
+</head>
+<body>
+<center>
+    <h1>This is Kaenjita JPYC app</h1>
+	<br><br>
+    <input type="button" value="connect metamask" onclick="connectMetamask();"><br>
+</center>
+</body>
+</html>
