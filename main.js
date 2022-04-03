@@ -9,8 +9,11 @@ async function checkJPYC(provider){
 
 
 async function connectMetamask(){
+ 
 console.log("connect Metamask");
+ console.log(window.ehtereum);
 const provider = new ethers.providers.Web3Provider(window.ethereum);
+ console.log(provider);
 await provider.send("eth_requestAccounts", []);
 const signer=provider.getSigner();
 console.log(signer);
@@ -39,7 +42,7 @@ const JPYCContract = new ethers.Contract(JPYCAddress, JPYCAbi, provider);
   console.log(names);
   sym=await JPYCContract.symbol();
   console.log(sym);
-  balance = await JPYCContract.balanceOf(signer);
+  balance = await JPYCContract.balanceOf(provider);
   ether.utils.formatUnits(balance,18);
  console.log(balance);
   
