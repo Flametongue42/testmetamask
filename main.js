@@ -1,6 +1,6 @@
 async function checkJPYC(provider){
   //matic JPYC adrress
-  const JPYCAddress = 0x6AE7Dfc73E0dDE2aa99ac063DcF7e8A63265108c;
+  const JPYCAddress = "0x6AE7Dfc73E0dDE2aa99ac063DcF7e8A63265108c";
   const JPYCAbi = [
   // Some details about the token
   "function name() view returns (string)",
@@ -18,9 +18,9 @@ async function checkJPYC(provider){
  
 const JPYCContract = new ethers.Contract(JPYCAddress, JPYCAbi, provider);
   
-  await JPYCCOntract.name();
-  await JPYCCOntract.Symbol();
- // balance = await JPYCCOntract.bakabceOf();
+  await JPYCContract.name();
+  await JPYCContract.Symbol();
+ // balance = await JPYCContract.balanceOf();
  // ether.utils.formatUnits(balance,18);
 
 const value = await JPYCContract.getValue();
@@ -35,7 +35,7 @@ console.log("connect Metamask");
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 await provider.send("eth_requestAccounts", []);
 const signer=provider.getSigner();
-  checkJPYC(provider);
+await checkJPYC(provider);
 return false;
   
 }
