@@ -38,9 +38,9 @@ const JPYCContract = new ethers.Contract(JPYCAddress, JPYCAbi, provider);
   console.log(names);
   sym=await JPYCContract.symbol();
   console.log(sym);
-  balance = await JPYCContract.balanceOf();
+  balance = await JPYCContract.balanceOf(signer);
   ether.utils.formatUnits(balance,18);
-console.long(balance)
+ console.log(balance);
   
   return false;
   
