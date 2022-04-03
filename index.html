@@ -9,14 +9,6 @@
 
 <script language="javascript" type="text/javascript">
 
-async function connectMetamask(){
-console.log("connect Metamask");
-const provider = new ethers.providers.Web3Provider(window.ethereum);
-await provider.send("eth_requestAccounts", []);
-const signer=provider.getSigner();
-return false;
-}
-
 </script>
 
 
@@ -26,7 +18,7 @@ return false;
 <center>
     <h1>This is Kaenjita JPYC app</h1>
 	<br><br>
-    <input type="button" value="connect metamask" onclick="connectMetamask();"><br>
+    
 </center>
 </body>
 </html>
