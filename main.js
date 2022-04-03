@@ -1,5 +1,21 @@
 async function checkJPYC(provider){
-  //matic JPYC adrress
+ 
+  
+//const value = await JPYCContract.getValue();
+//console.log(value);
+  
+}
+
+
+
+async function connectMetamask(){
+console.log("connect Metamask");
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+await provider.send("eth_requestAccounts", []);
+const signer=provider.getSigner();
+//await checkJPYC(provider);
+  
+ //matic JPYC adrress
   const JPYCAddress = "0x6AE7Dfc73E0dDE2aa99ac063DcF7e8A63265108c";
   const JPYCAbi = [
   // Some details about the token
@@ -18,24 +34,14 @@ async function checkJPYC(provider){
  
 const JPYCContract = new ethers.Contract(JPYCAddress, JPYCAbi, provider);
   
-  await JPYCContract.name();
-  await JPYCContract.Symbol();
- // balance = await JPYCContract.balanceOf();
- // ether.utils.formatUnits(balance,18);
-
-const value = await JPYCContract.getValue();
-console.log(value);
+  names=await JPYCContract.name();
+  console.log(names);
+  sym=await JPYCContract.symbol();
+  console.log(sym);
+  balance = await JPYCContract.balanceOf();
+  ether.utils.formatUnits(balance,18);
+console.long(balance)
   
-}
-
-
-
-async function connectMetamask(){
-console.log("connect Metamask");
-const provider = new ethers.providers.Web3Provider(window.ethereum);
-await provider.send("eth_requestAccounts", []);
-const signer=provider.getSigner();
-await checkJPYC(provider);
-return false;
+  return false;
   
 }
