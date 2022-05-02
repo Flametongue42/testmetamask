@@ -24,12 +24,14 @@ enchant();
 var game = new Game(BLOCK_GAME_WIDTH, BLOCK_GAME_HEIGHT);
 //ブロック、背景、勝利、ゲームスタート文字、ボール、反射パネル
 
-var blockimage="test1.png";
-var backimage="test2.png";
-var winimage="block_image_win.jpg";
-var startimage="block_icon_menu.png";
-var ballimage="block_icon_boll.png";
-var panelimage="block_icon_panel.png";
+var ImageFolder=".\\image\\";
+
+var blockimage=ImageFolder+"test1.png";
+var backimage=ImageFolder+"test2.png";
+var winimage=ImageFolder+"block_image_win.jpg";
+var startimage=ImageFolder+"block_icon_menu.png";
+var ballimage=ImageFolder+"block_icon_boll.png";
+var panelimage=ImageFolder+"block_icon_panel.png";
 
 //game.preload("test1.png", "test2.jpg", "block_image_win.jpg", "block_icon_menu.png", "block_icon_boll.png", "block_icon_panel.png");
 game.preload(blockimage,backimage,winimage,startimage,ballimage,panelimage);
